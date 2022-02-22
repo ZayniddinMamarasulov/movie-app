@@ -7,4 +7,6 @@ A new Flutter project.
 
 auth screen:
 
-![](assets/screen_1.png)
+![](assets/screen_1.png){
+    width:300px;
+}
