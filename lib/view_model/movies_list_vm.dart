@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:movie_app/core/api_response.dart';
 import 'package:movie_app/model/movie.dart';
+import 'package:movie_app/model/repositories/popular_repository.dart';
 
 class MoviesListViewModel extends ChangeNotifier {
-  final String _apiKey = '&api_key=d8c23eac6c25c1e10788b33809f722e1';
-  final String _host = 'https://api.themoviedb.org/3/movie/popular?';
+  ApiResponse _apiResponse = ApiResponse.initial('Empty');
+
+  ApiResponse get response {
+    return _apiResponse;
+  }
 
   List<Movie> _movies = [];
 
@@ -13,14 +18,14 @@ class MoviesListViewModel extends ChangeNotifier {
     return _movies;
   }
 
-  Future<void> getFromApi() async {
-    var uri = '$_host$_apiKey&language=en-US&page=1';
-
-    var url = Uri.parse(uri);
-    final response = await http.get(url);
-
-    final request = jsonDecode(response.body)['results'] as List;
-    _movies = request.map((e) => Movie.fromJson(e)).toList();
+  Future<void> fetchPopularMovies() async {
+    try {
+      List<Movie> movies = await PopularRepository().fetchMovies();
+      _movies = movies;
+      _apiResponse = ApiResponse.completed(movies);
+    } catch (e) {
+      _apiResponse = ApiResponse.error(e.toString());
+    }
     notifyListeners();
   }
 }
