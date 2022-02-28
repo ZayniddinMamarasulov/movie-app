@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "969350235312",
+    "project_id": "movieapp-621bb",
+    "storage_bucket": "movieapp-621bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969350235312:android:f7c10696d5fbbc2ea8e775",
+        "android_client_info": {
+          "package_name": "uzbek.flutter.movie_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969350235312-6qljhs93plark50k20016ja15siqqcp2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwkQ-poidnA1-KvPwgTsJ6QZFThgJDde4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969350235312-6qljhs93plark50k20016ja15siqqcp2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
