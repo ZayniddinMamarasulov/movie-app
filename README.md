@@ -7,7 +7,7 @@ A new Flutter project.
 
 auth screen:
 
-<p align="center">
+<p align="left">
   <img src="assets/screen_1.png" alt="SR GUI Opening window"
        width="300">
 </p>
