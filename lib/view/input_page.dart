@@ -15,7 +15,6 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   final formKey = GlobalKey<FormState>();
   final _picker = ImagePicker();
-  File _selectedImage = File('');
 
   String name = "";
   String genre = "";
@@ -157,6 +156,7 @@ class _InputPageState extends State<InputPage> {
     setState(() {
       _isLoading = true;
     });
+
     var firebaseStorageRef = FirebaseStorage.instance
         .ref()
         .child('movie_images')
@@ -185,6 +185,8 @@ class _InputPageState extends State<InputPage> {
       print(e);
     }
   }
+
+  File _selectedImage = File('');
 
   Future getImage() async {
     final pickedFile = await _picker.getImage(source: ImageSource.gallery);
