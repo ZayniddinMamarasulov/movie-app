@@ -9,5 +9,5 @@ auth screen:
 
 <p align="center">
   <img src="assets/screen_1.png" alt="SR GUI Opening window"
-       width="550">
+       width="300">
 </p>
